@@ -12,24 +12,17 @@ public class PlayerSystem implements SubSystem {
     int x = 8;
     int y = 8; //starting position
 
-    @Override
-    public void init() {
+    public int[] position() {
+        return new int[] {x,y};
+    }
 
+    public void move(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     @Override
     public void periodic(Graphics graphics) {
-
-        if (Gdx.input.isKeyJustPressed(Input.Keys.DOWN)) {
-            int yFuture = y - 1;
-
-            if (yFuture > 0) {
-                y = yFuture;
-            }
-        }
-
         graphics.drawTexture(Textures.PLAYER, x, y);
-
-
     }
 }
