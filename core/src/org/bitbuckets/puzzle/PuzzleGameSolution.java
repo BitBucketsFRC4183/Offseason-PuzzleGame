@@ -17,13 +17,13 @@ public class PuzzleGameSolution implements SubSystem {
      * This is your very first subsystem! We use the subsystem pattern in robot code as well. Press Ctrl + B while
      * highlighting it to open it, or double click it in the file browser
      */
-    PlayerSystem playerSystem;
+    PlayerSystem playerSystem = new PlayerSystem();
 
     @Override
     public void init() {
         //This is the initialization, or "init" function and is only ran once
         //Use this to execute code that is used for startup
-
+        System.out.println("Hello World");
         //when you add new subsystems, make sure to add them here, in the periodic loop, and call their init function.
         playerSystem = new PlayerSystem();
         playerSystem.init();
