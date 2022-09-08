@@ -13,6 +13,7 @@ public class PlayerSystem implements SubSystem {
 
     int[] pose2d = new int[]{8,8};
 
+
     @Override
     public void periodic(Graphics graphics) {
 
@@ -28,8 +29,17 @@ public class PlayerSystem implements SubSystem {
         pose2d[0] = newX;
         pose2d[1] = newY;
 
-
+/* ## MERGE CONFLICT ##
+    public int[] position() {
+        return new int[] {x,y};
     }
+*/
+
+    public void move(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
 
 
     public int[] transform() {
@@ -56,5 +66,10 @@ public class PlayerSystem implements SubSystem {
         return new int[] {0,0};
 
 
+/* ## MERGE CONFLICT ##
+    @Override
+    public void periodic(Graphics graphics) {
+        graphics.drawTexture(Textures.PLAYER, x, y);
+*/
     }
 }
